@@ -48,7 +48,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
     }
   };
 
-  const updateTimeBar = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const updateTimeBar = (event: React.SyntheticEvent<HTMLAudioElement>) => {
     if (audioRef.current) {
       setCurrentProgress(audioRef.current.currentTime.toString());
     }
