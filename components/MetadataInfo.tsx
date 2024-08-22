@@ -19,11 +19,11 @@ interface MetadataInfoProps {
 
 export const MetadataInfo: React.FC<MetadataInfoProps> = ({ metadataInfo }) => {
   return (
-    <div className="flex w-full my-10 gap-10">
-      <div>
+    <div className="flex md:flex-row flex-col w-full my-10 gap-10 px-2">
+      <div className="w-10/12 md:w-fit mx-auto md:mx-0">
         <ModalImage src={"/cover.svg"} alt="cover-image" />
       </div>
-      <div>
+      <div className="w-10/12 md:w-fit mx-auto md:mx-0">
         <span className="italic text-slate-500 text-sm">JSON Metadata info</span>
         <h1 className="text-2xl mb-2">{metadataInfo.title}</h1>
         <p>Author: {metadataInfo.author}</p>
