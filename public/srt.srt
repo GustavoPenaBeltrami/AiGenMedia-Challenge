@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:5,000
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci nulla, malesuada eu pretium vel, rhoncus sed tortor. Curabitur nec convallis felis. Morbi eget consectetur mi. Etiam in tortor quis magna lobortis placerat. Maecenas nec viverra elit. Donec in quam placerat velit euismod ullamcorper a sit amet odio. Integer ut consectetur nunc. Curabitur ac massa augue.
+
+2
+00:00:5,000 --> 00:00:10,000
+Quisque porttitor odio quis dui posuere, sit amet ultrices leo sollicitudin. Duis quis lectus ut ligula luctus lobortis quis ut orci. Donec ligula quam, dignissim vitae euismod ut, congue quis diam. Aenean sit amet tellus ac libero lacinia gravida id sit amet orci. In hac habitasse platea dictumst. Sed convallis velit non felis commodo ornare. Nullam scelerisque aliquet velit ac pulvinar. Ut tristique vehicula viverra. Suspendisse pellentesque enim id ipsum consequat pharetra vitae sed neque. Mauris sed condimentum justo. Mauris ut pulvinar nibh. Vestibulum euismod feugiat lorem, id fringilla tellus efficitur quis. Vivamus vitae placerat eros. Curabitur lobortis velit vitae elit suscipit, sit amet volutpat est egestas. Sed egestas ac turpis non consequat.
+
+3
+00:00:10,000 --> 00:00:15,000
+Pellentesque vel fringilla ipsum. Pellentesque congue ex nec lacinia blandit. Donec pellentesque urna facilisis mi malesuada congue. Phasellus at aliquet purus. Ut tempus fringilla enim, quis fermentum sem. Maecenas ut ligula ut velit egestas facilisis. Integer iaculis mi vel elementum accumsan. Mauris eleifend suscipit arcu, consequat consectetur lorem semper vel. Nunc id lorem convallis, ultricies orci in, molestie ex. Pellentesque lobortis sem eget lacus lobortis, eget consectetur erat laoreet. Donec pellentesque eget velit id scelerisque. Donec maximus nisl eu sem tempus euismod eu et velit. Sed mollis fermentum neque, sed sagittis leo. Nunc blandit nunc facilisis iaculis pulvinar. Cras nec mi at nulla ornare ullamcorper. Phasellus condimentum ac lectus eget porta.
+
+4
+00:00:15,000 --> 00:00:20,000
+Sed gravida commodo lectus, id tincidunt ipsum. Fusce interdum ultrices odio ut varius. In sapien nulla, vehicula id elementum eget, sodales et odio. Donec finibus eget urna a feugiat. Sed nisl felis, sagittis sit amet ipsum id, mattis eleifend massa. Suspendisse non sapien elementum, molestie ex volutpat, elementum nisi. Ut sed neque tincidunt, rutrum ante quis, tempor diam. Nulla laoreet sapien a dictum varius. Cras ut accumsan nulla.
+
+5
+00:00:25,000 --> 00:00:29,000
+Aliquam varius interdum libero, et vehicula dui semper quis. Suspendisse nec facilisis justo. Duis bibendum vel ex eu molestie. Phasellus ac ante ut felis faucibus accumsan in ac libero. Proin semper neque sit amet suscipit tristique. Maecenas vitae elementum felis, a euismod velit. Nullam euismod, mi ut cursus sodales, metus ipsum hendrerit augue, non placerat justo risus in orci. Etiam posuere posuere lacus eu dapibus. Nam sollicitudin metus ex, nec interdum turpis posuere consectetur. Integer congue vel urna eget commodo. Vestibulum pretium nisl nec lorem ultricies bibendum sed vitae lectus.
