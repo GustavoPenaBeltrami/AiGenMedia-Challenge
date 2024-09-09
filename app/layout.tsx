@@ -6,8 +6,8 @@ import { Header } from "@/components/Header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AIGENMEDIA Challenge",
-  description: "code challenge by AiGenMedia",
+  title: "SpyGlass",
+  description: "SpyGlass",
 };
 
 export default async function RootLayout({
