@@ -26,10 +26,10 @@ interface Characters {
 
 export const CharacterInventory: React.FC<Characters> = ({ characters }) => {
   return (
-    <div className="grid md:grid-cols-2 gap-x-5">
+    <div className="flex flex-wrap justify-center gap-x-5 w-full">
       {characters.map((character, index) => {
         return (
-          <div key={index} className="mb-5 bg-slate-100 p-4 rounded-md">
+          <div key={index} className="mb-5 bg-slate-200 p-4 rounded-md max-w-[400px]">
             <h3 className="text-lg font-semibold flex gap-x-2 mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>{character.name}</h3>
             <ul className="list-disc list-inside">
               {character.description && <li>Description: {character.description}</li>}

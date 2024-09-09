@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ContentItem, CurrentContent } from "./CurrentContent";
 
 interface ContentGridProps {
@@ -11,9 +11,20 @@ export const Contents: React.FC<ContentGridProps> = ({ contents }) => {
     contents[0]?.label || ""
   );
 
+
   const currentContent = contents.find(
     (content) => content.label === currentPage
   );
+
+  const handleClick = (label:string) => {
+    setCurrentPage(label);
+
+    const topSceneElement = document.getElementById('top-content');
+    if (topSceneElement) {
+      topSceneElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
 
   return (
     <div>
@@ -34,7 +45,7 @@ export const Contents: React.FC<ContentGridProps> = ({ contents }) => {
         ))}
       </div>
 
-      <div>
+      <div id="top-content">
         <h2 className="text-3xl font-semibold mb-10">{currentPage}</h2>
 
         {/* Asegúrate de que currentContent no sea undefined */}
@@ -54,7 +65,7 @@ export const Contents: React.FC<ContentGridProps> = ({ contents }) => {
                 : "bg-slate-200 text-slate-500"
             } rounded-md p-2 max-w-[200px]`}
             key={index}
-            onClick={() => setCurrentPage(contentItem.label)}
+            onClick={() => handleClick(contentItem.label)}
           >
             <p className="line-clamp-2">{contentItem.label}</p>
           </button>

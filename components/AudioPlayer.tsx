@@ -80,7 +80,8 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
       </div>
       <audio
         ref={audioRef}
-        src={src}
+        // src={src}
+        src={"/wav.wav"}
         onTimeUpdate={updateTimeBar}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}

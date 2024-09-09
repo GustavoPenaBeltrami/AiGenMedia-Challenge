@@ -1,16 +1,11 @@
 'use client'
 import { Metadata } from "@/components/Metadata";
 import { Contents } from "@/components/Contents";
-import { ChapterContent } from "@/components/ContentItem";
 import JsonSelector from "@/components/JsonSelector";
 import { useEffect, useState } from "react";
+import { ContentItem } from "@/components/CurrentContent";
 
-interface ContentItem {
-  label: string;
-  src: string;
-  fragment?: string | null;
-  chapter_contents: ChapterContent[];
-}
+
 
 interface Metadata {
   author: string;

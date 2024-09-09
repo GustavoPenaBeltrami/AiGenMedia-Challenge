@@ -1,8 +1,10 @@
 import React from "react";
 import { ChapterContentPagination } from "./ChapterContentPagination";
 import { ChapterContent } from "./ChapterContent";
-import { CharacterInventory } from "./CharacterInventory";
-import { LocationInventory } from "./LocationInventory";
+import { Character, CharacterInventory } from "./CharacterInventory";
+import { Location, LocationInventory } from "./LocationInventory";
+import { ScenesPagination } from "./ScenesPagination";
+import { Scene } from "./Scene";
 
 export interface ContentItem {
   label: string;
@@ -16,28 +18,12 @@ export interface ContentItem {
   locations: Location[];
 }
 
-interface Scene {
-  name: string;
-  description: string;
-}
-
-interface Character {
-  name: string;
-  description: string;
-}
-
-interface Location {
-  name: string;
-  description: string;
-}
-
 export const CurrentContent: React.FC<{ content: ContentItem }> = ({
   content,
 }) => {
   return (
     <>
       <div className="grid md:grid-cols-2 gap-5 mt-5 ">
-
         {/* Scripts */}
         <div>
           <h4 className="text-center font-semibold text-md mb-2">
@@ -59,21 +45,22 @@ export const CurrentContent: React.FC<{ content: ContentItem }> = ({
       <div className="w-full h-[1px] bg-slate-300 mt-10"></div>
 
       {/* Characters */}
-        <h3 className="text-2xl mt-10 font-bold mb-6">Characters</h3>
-        <div className="flex">
-            <CharacterInventory characters={content.characters} />
-        </div>
+      <h3 className="text-2xl mt-10 font-bold mb-6">Characters</h3>
+      <div className="flex">
+        <CharacterInventory characters={content.characters} />
+      </div>
       <div className="w-full h-[1px] bg-slate-300 mt-10"></div>
 
-      
       {/* Characters */}
-        <h3 className="text-2xl mt-10 font-bold mb-6">Location</h3>
-        <div className="flex">
-            <LocationInventory locations={content.locations} />
-        </div>
+      <h3 className="text-2xl mt-10 font-bold mb-6">Location</h3>
+      <div className="flex">
+        <LocationInventory locations={content.locations} />
+      </div>
       <div className="w-full h-[1px] bg-slate-300 mt-10"></div>
 
-
+      {/* Scene */}
+      <h3 className="text-2xl mt-10 font-bold mb-6">Scene</h3>
+      <ScenesPagination content={content} itemsPerPage={1} />
 
       {/* Chapter Contents */}
       <h3 className="text-2xl mt-10 mb-6 font-bold">Chapter Contents</h3>

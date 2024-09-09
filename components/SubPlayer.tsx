@@ -15,7 +15,8 @@ const Subplayer: React.FC<SubplayerProps> = ({src}) => {
   useEffect(() => {
     // Función para cargar el archivo .srt
     const loadSrtFile = () => {
-      fetch(src) // Ruta relativa al archivo en public
+      // fetch(src) 
+      fetch("/srt.srt")
         .then((response) => {
           if (!response.ok) {
             throw new Error("Network response was not ok.");
