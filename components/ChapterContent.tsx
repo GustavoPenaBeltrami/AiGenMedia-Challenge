@@ -12,65 +12,21 @@ interface PromptItem {
   RCI?: string;
 }
 
-export interface Character {
-  celebrity?: string;
-  age?: string;
-  gender?: string;
-  hair?: string;
-  eyes?: string;
-  skin_tone?: string;
-  body_type?: string;
-  height?: string;
-  distinctive_features?: string;
-  clothing_style?: string;
-  facial_features?: string;
-  expression?: string;
-  posture?: string;
-  accessories?: string;
-  occupation_traits?: string;
-  era?: string;
-  background?: string;
-}
-
-export interface Location {
-  real_word_place?: string;
-  physical_appearance?: string;
-  cultural_background?: string;
-  era?: string;
-  background?: string;
-  other_traits?: string;
-}
-
 export interface ChapterContent {
   type: string;
-  content?: string;
-  src?: string;
-  alt?: string;
+  content: string;
   hash?: string;
-  audio?: string;
-  subtitles?: string;
-  prompt?: PromptItem[];
-  character_inventory?: { [key: string]: Character };
-  scene_change?: string;
-  clothing_change?: string;
-  location_change?: string;
-  updated_story_summary?: string;
-  updated_scene_summary?: string;
-  location_inventory?: { [key: string]: Location };
+
 }
 
 interface ContentItemProps {
   chapterContent: ChapterContent;
   index: number;
-}
-export const ContentItem: React.FC<ContentItemProps> = ({
-  chapterContent,
-  index,
-}) => {
-  return (
-    <div className="w-full">
-      <div className="w-full h-[1px] bg-slate-300 mb-5"></div>
-      {chapterContent.type !== "image" && (
+
+  }
+  const backup = `
+  <>
+        {chapterContent.type !== "image" && (
         <>
           {/* Title */}
           <h2 className="mb-2 text-2xl">Chapter {index + 1} </h2>
@@ -164,6 +120,20 @@ export const ContentItem: React.FC<ContentItemProps> = ({
           <ModalImage src={"/image.svg"} alt={chapterContent.alt} />
         </div>
       )}
+  </>
+  `
+export const ContentItem: React.FC<ContentItemProps> = ({
+  chapterContent,
+  index,
+
+
+}) => {
+  return (
+    <div className="w-full">
+      <h2 className="mb-2 text-2xl">Chapter {index + 1} </h2>
+      <p className="text-md">{chapterContent.content}</p>
+      {chapterContent.hash && <span className="text-sm italic text-slate-400">hash: {chapterContent.hash}</span>}
+      <div className="w-full h-[1px] bg-slate-300 mt-5"></div>
     </div>
   );
 };

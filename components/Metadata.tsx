@@ -9,6 +9,7 @@ interface Metadata {
   language: string;
   rights: string;
   publisher: string;
+  chapter_is_story: boolean;
   cover: string;
 }
 
@@ -17,7 +18,7 @@ interface MetadataInfoProps {
   metadataInfo: Metadata;
 }
 
-export const MetadataInfo: React.FC<MetadataInfoProps> = ({ metadataInfo }) => {
+export const Metadata: React.FC<MetadataInfoProps> = ({ metadataInfo }) => {
   return (
     <div className="flex md:flex-row flex-col w-full my-10 gap-10 px-2">
       <div className="w-10/12 md:w-fit mx-auto md:mx-0">

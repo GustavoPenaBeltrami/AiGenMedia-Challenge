@@ -6,3 +6,17 @@
 .test {
     border: 1px solid red
 }
+
+.start-animation {
+    opacity: 0;
+}
+
+.animate {
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

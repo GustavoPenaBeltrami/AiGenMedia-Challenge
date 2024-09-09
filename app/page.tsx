@@ -1,22 +1,9 @@
-import fs from "fs";
-import path from "path";
-import Image from "next/image";
-import AudioPlayer from "@/components/AudioPlayer";
-import Subplayer from "@/components/SubPlayer";
-import {MetadataInfo} from "@/components/MetadataInfo";
-import { ContentGrid } from "@/components/ContentGrid";
+'use client'
+import { Metadata } from "@/components/Metadata";
+import { Contents } from "@/components/Contents";
 import { ChapterContent } from "@/components/ContentItem";
-
-const getData = async (): Promise<TocData> => {
-  const filePath = path.join(process.cwd(), "public", "toc.json");
-  const jsonData = fs.readFileSync(filePath, "utf8");
-  return JSON.parse(jsonData);
-};
-
-const fileExists = (filePath: string): boolean => {
-  return fs.existsSync(filePath);
-};
-
+import JsonSelector from "@/components/JsonSelector";
+import { useEffect, useState } from "react";
 
 interface ContentItem {
   label: string;
@@ -33,6 +20,7 @@ interface Metadata {
   rights: string;
   publisher: string;
   cover: string;
+  chapter_is_story: boolean
 }
 
 interface TocData {
@@ -40,14 +28,27 @@ interface TocData {
   contents: ContentItem[];
 }
 
-export default async function Home() {
-  const data = await getData();
-  const {metadata, contents} = data;
+export default function Home() {
+  const [jsonData, setJsonData] = useState<TocData | null>(null);
+  const [animationKey, setAnimationKey] = useState<number>(0);
+
+  useEffect(() => {
+    if (jsonData) {
+      // Reiniciar la animación actualizando la clave
+      setAnimationKey(prevKey => prevKey + 1);
+    }
+  }, [jsonData]);
 
   return (
     <div className="overflow-x-hidden max-w-[1200px] mx-auto">
-    <MetadataInfo metadataInfo={metadata} />
-    <ContentGrid contents={contents} />
+      <JsonSelector setJsonData={setJsonData} />
+
+      {jsonData && (
+        <div className={`start-animation animate`} key={animationKey}>
+          <Metadata metadataInfo={jsonData.metadata} />
+          <Contents contents={jsonData.contents} />
+        </div>
+      )}
     </div>
   );
 }
